@@ -1,0 +1,15 @@
+[build]
+  publish = "dist" # or whatever your build output directory is
+
+# Handle the WASM files correctly
+[[headers]]
+  for = "*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
+
+# Ensure your custom models are included
+[[plugins]]
+  package = "@netlify/plugin-local-install-core"
+
+[build.environment]
+  NODE_VERSION = "18" # Or whatever version you're using

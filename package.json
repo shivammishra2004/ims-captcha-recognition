@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run copy-tessdata",
+    "copy-tessdata": "mkdir -p dist/tessdata && cp -r src/assets/tessdata/* dist/tessdata/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
