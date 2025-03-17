@@ -30,11 +30,11 @@ function App() {
   
     try {
       console.log('🔹 Creating Tesseract worker...');
-      const worker = createWorker({
-        workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/worker.min.js',
-        langPath: `${window.location.origin}/src/assets/tessdata/`,
+      const worker = await createWorker({
+        langPath: `${window.location.origin}/src/assets/tessdata/`, // Use local custom trained data
+        corePath: 'https://cdn.jsdelivr.net/npm/tesseract.js-core@2.2.0/tesseract-core.wasm.js', 
         gzip: false,
-        logger: m => console.log(m)
+        logger: m => console.log(m),
       });
   
       console.log('✅ Worker created successfully.');
