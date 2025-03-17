@@ -1,5 +1,5 @@
 [build]
-  publish = "dist" # or whatever your build output directory is
+  publish = "dist" # Adjust if your build output directory is different
 
 # Handle the WASM files correctly
 [[headers]]
@@ -7,9 +7,9 @@
   [headers.values]
     Content-Type = "application/wasm"
 
-# Ensure your custom models are included
-[[plugins]]
-  package = "@netlify/plugin-local-install-core"
-
-[build.environment]
-  NODE_VERSION = "18" # Or whatever version you're using
+# Add CORS headers for WASM execution
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cross-Origin-Embedder-Policy = "require-corp"
+    Cross-Origin-Opener-Policy = "same-origin"
