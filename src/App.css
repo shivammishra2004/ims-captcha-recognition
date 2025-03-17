@@ -1,0 +1,133 @@
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+.upload-section {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file-input {
+  padding: 10px;
+  border: 1px dashed #3498db;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 1;
+  transition: background-color 0.2s;
+}
+
+.primary-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.primary-button:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.secondary-button {
+  background-color: #ecf0f1;
+  color: #34495e;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background-color: #dfe6e9;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.preview-section, .result-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.captcha-image {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ecf0f1;
+  border-radius: 4px;
+}
+
+.captcha-text {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #2c3e50;
+  background-color: #f1f8ff;
+  padding: 15px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #fdeded;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .result-container {
+    flex-direction: row;
+  }
+  
+  .preview-section, .result-section {
+    flex: 1;
+  }
+}
