@@ -31,6 +31,7 @@ function App() {
     try {
       console.log('🔹 Creating Tesseract worker...');
       const worker = createWorker({
+        workerPath: 'https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/worker.min.js',
         langPath: `${window.location.origin}/src/assets/tessdata/`,
         gzip: false,
         logger: m => console.log(m)
