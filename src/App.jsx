@@ -31,7 +31,7 @@ function App() {
     try {
       console.log('🔹 Creating Tesseract worker...');
       const worker = await createWorker({
-        langPath: `/tessdata/`,
+        langPath: '/tessdata/',
         workerPath: 'https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/2.1.5/worker.min.js',
         corePath: 'https://cdn.jsdelivr.net/npm/tesseract.js-core@2.2.0/tesseract-core.wasm.js', 
         gzip: false,

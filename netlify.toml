@@ -1,15 +1,8 @@
 [build]
-  publish = "dist" # Adjust if your build output directory is different
+  command = "npm run build"
+  publish = "dist"
 
-# Handle the WASM files correctly
-[[headers]]
-  for = "*.wasm"
-  [headers.values]
-    Content-Type = "application/wasm"
-
-# Add CORS headers for WASM execution
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Cross-Origin-Embedder-Policy = "require-corp"
-    Cross-Origin-Opener-Policy = "same-origin"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
